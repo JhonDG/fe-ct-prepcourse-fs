@@ -120,6 +120,11 @@ function operadoresLogicos(num1, num2, num3) {
    // Si todos los argumentos son cero, retornar ---> "Error".
    // Si no se cumple ninguna de las condiciones anteriores, retornar false.
    // Tu código:
+   if ( num1 > num2 && num1 > num3 ) {return "Numero 1 es mayor y positivo";}
+   if ( num1 < 0 || num2 < 0 || num3 < 0) {return "Hay negativos";}
+   if ( num3 > num1 && num3 > num2 ) {return ++num3;}
+   if ( num1 == 0 || num2 == 0 || num3 == 0) {return "Error";}
+   else {return false;}
 }
 
 function esPrimo(num) {
@@ -129,18 +134,26 @@ function esPrimo(num) {
    // [Pista 2]: puedes resolverlo utilizando un `bucle for`.
    // [Nota]: los números negativos, 0 y 1 NO son números primos.
    // Tu código:
+   var contador = 0;
+  if (num < 2) return false;
+  for (let i = 1; i <= num; i++)
+  if (num%i===0) contador++;
+  return contador === 2;
 }
 
 function esVerdadero(valor) {
    // Si "valor" es verdadero retornar "Soy verdadero".
    // Caso contrario, retornar "Soy falso".
    // Tu código:
+   if (valor) {return "Soy verdadero";}
+   else {return "Soy falso";}
 }
 
 function tieneTresDigitos(num) {
    // Si el número recibido tiene tres dígitos retornar true.
    // Caso contrario, retornar false.
    // Tu código:
+   {return num.toString().length === 3;}
 }
 
 function doWhile(num) {
@@ -148,6 +161,10 @@ function doWhile(num) {
    // Retornar el valor final.
    // Utilizar el bucle Do-While.
    // Tu código:
+   let i = 1;
+  do {num = num + 5; i++;} 
+  while (i<=8);
+  return num;
 }
 
 /*⚠️ NO MODIFIQUES NADA DEBAJO DE ESTO ⚠️*/
