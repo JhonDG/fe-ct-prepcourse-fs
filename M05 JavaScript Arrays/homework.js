@@ -57,24 +57,39 @@ function arrayContiene(array, elemento) {
    // Verifica si el elemento existe dentro del arreglo recibido.
    // Retornar true si está, o false si no está.
    // Tu código:
+   for (let i = 0; i < array.length; i++) {
+      if (array [i] === elemento) return true
+   }
+   return false 
 }
 
 function agregarNumeros(arrayOfNums) {
    // El parámetro "arrayOfNums" debe ser un arreglo de números.
    // Suma todos los elementos y retorna el resultado.
    // Tu código:
+   let suma = 0
+   for ( let i = 0; i < arrayOfNums.length; i++) {
+     if (arrayOfNums[i]%1===0) suma = suma + arrayOfNums[i]; 
+   }
+   return suma;
 }
 
 function promedioResultadosTest(resultadosTest) {
    // El parámetro "resultadosTest" es un arreglo de números.
    // Itera (en un bucle) los elementos del arreglo y devuelve el promedio de las notas.
    // Tu código:
+   return agregarNumeros(resultadosTest)/resultadosTest.length; 
 }
 
 function numeroMasGrande(arrayOfNums) {
    // El parámetro "arrayOfNums" es un arreglo de números.
    // Retornar el número más grande.
    // Tu código:
+   let salida = arrayOfNums[0];
+   for (let i = 1; i < arrayOfNums.length; i++ ) {
+      if (arrayOfNums[i]>salida) salida = arrayOfNums[i];
+   }
+   return salida;
 }
 
 function multiplicarArgumentos() {
@@ -82,11 +97,23 @@ function multiplicarArgumentos() {
    // Si no se pasan argumentos retorna 0. Si se pasa un argumento, simplemente retórnalo.
    // [PISTA]: "arguments" es un arreglo.
    // Tu código:
+   if (arguments.length === 1) return arguments[0];
+   if (arguments.length === 0) return 0;
+   let  salida = arguments[0];
+   for (let i = 1; i < arguments.length; i++) {
+      salida = salida * arguments[i];
+   }
+   return salida;
 }
 
 function cuentoElementos(array) {
    // Desarrolla una función que retorne la cantidad de elementos del arreglo cuyo valor sea mayor que 18.
    // Tu código:
+   let cantidad = 0
+   for (let i = 0; i < array.length; i++) {
+      if (array[i]>18) cantidad++;
+   }
+   return cantidad;
 }
 
 function diaDeLaSemana(numeroDeDia) {
